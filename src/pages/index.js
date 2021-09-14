@@ -10,6 +10,7 @@ const IndexPage = () => {
       <StaticImage
         src = "https://cdnb.artstation.com/p/assets/images/images/019/775/347/large/kate-kneebone-su-background-style-sunset.jpg?1564979276"
         alt = "Any image"
+        />
       </Layout>
     </main>
   )

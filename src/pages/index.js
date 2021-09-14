@@ -4,7 +4,7 @@ import Layout from '../components/layout'
 const IndexPage = () => {
   return (
     <main>
-      <Layout pateTitle = 'Home Page'>
+      <Layout pageTitle = 'Home Page'>
       <p>I'm making this by following the Gatsby Tutorial.</p>
       </Layout>
     </main>

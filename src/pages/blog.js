@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 
 const BlogPage = () => {
@@ -9,4 +10,12 @@ const BlogPage = () => {
   )
 }
 
-export default BlogPage
+export const query = graphql`
+  query {
+    allFile {
+      nodes {
+        name
+      }
+    }
+  }
+`

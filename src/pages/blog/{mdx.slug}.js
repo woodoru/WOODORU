@@ -24,7 +24,7 @@ const BlogPost = ({ data }) => {
 
 export const query = graphql`
 query ($id: String) {
-    mdx(id: {eq: $id}) {
+    mdx(id, {eq: $id}) {
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")

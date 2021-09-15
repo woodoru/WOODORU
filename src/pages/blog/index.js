@@ -26,7 +26,7 @@ const BlogPage = ({ data }) => {
 }
 
 export const query = graphql`
-query MyQuery($id: String) {
+query {
   allMdx(sort: {fields: frontmatter___date, order: DESC}) {
     nodes {
       id

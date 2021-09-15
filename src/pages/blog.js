@@ -21,12 +21,21 @@ const BlogPage = ({ data }) => {
 
 export const query = graphql`
   query {
-    allFile {
+    allMDX (sort:  {fields: frontmatter___date, order: DESC}) {
       nodes {
-        name
+        frontmatter {
+          date(formatString: "MMMM DD, YYYY")
+          title
+      }
+      id
+      body
+      parent {
+      ... on  File {
+        modifiedTime(formatString: "MMMM DD, YYYY")
+        }
       }
     }
   }
-`
+}
 
 export default BlogPage

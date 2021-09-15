@@ -23,14 +23,14 @@ const BlogPost = ({ data }) => {
 }
 
 export const query = graphql`
-query ($id: String) {
-    mdx(id, {eq: $id}) }
-      frontmatter {
-        title
-        }date(formatString: "MMMM DD, YYYY")
-      }
-      body
+query MyQuery($id: String) {
+  mdx(id: {eq: $id}) {
+    frontmatter {
+      date(formatString: "MMMM DD, YYYY")
+      title
     }
+    body
+  }
 }
 `
 export default BlogPost

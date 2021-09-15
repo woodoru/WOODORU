@@ -31,6 +31,5 @@ query ($id: String) {
       }
       body
     }
-  }
 `
 export default BlogPost

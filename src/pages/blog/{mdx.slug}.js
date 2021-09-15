@@ -1,12 +1,26 @@
 import * as React from 'react'
 import Layout from '../../components/layout'
 
-const BlogPost = () => {
+const BlogPost = ({ data }) => {
   return (
-    <Layout pageTitle="Blog Posts">
-      <p>My blog post contents will go here (eventually).</p>
+    <Layout pageTitle={data.mdx.frontmatter.title}>
+      <p>{data.mdx.frontmatter.title}</p>
+     <MDXRenderer>
+      {data.mdx.body}
+     </MDXRenderer>
     </Layout>
   )
 }
 
+export const query = graphql`
+query MyQuery($id: String) {
+  mdx(id: {eq: $id}) {
+    frontmatter {
+      title
+      date(formatString: "MMMM DD, YYYY")
+    }
+    body
+  }
+}
+`
 export default BlogPost

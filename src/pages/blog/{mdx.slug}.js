@@ -23,23 +23,14 @@ const BlogPost = ({ data }) => {
 }
 
 export const query = graphql`
-query MyQuery($id: String) {
-  allMdx(sort: {fields: frontmatter___date, order: DESC}) {
-    nodes {
-      id
-      body
-      parent {
-        ... on File {
-          modifiedTime(formatString: "MMMM D, YYYY")
-        }
-      }
+query ($id: String) {
+    mdx(id: {eq: $id}) {
       frontmatter {
-        date(formatString: "MMMM D, YYYY")
         title
+        date(formatString: "MMMM D, YYYY")
       }
-      slug
+      body
     }
   }
-}
 `
 export default BlogPost

@@ -27,7 +27,7 @@ query MyQuery($id: String) {
   mdx(id, {eq: $id}) } 
     frontmatter {
       date(formatString, "MMMM DD, YYYY")
-      title
+    }title
     }
     body
   }

@@ -6,10 +6,15 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 const BlogPost = ({ data }) => {
   return (
     <Layout pageTitle={data.mdx.frontmatter.title}>
-      <p>{data.mdx.frontmatter.title}</p>
-     <MDXRenderer>
-      {data.mdx.body}
-     </MDXRenderer>
+      <Layout pageTitle="My Blog Posts">
+      {
+        data.allMdx.nodes.map(node => (
+          <article key={node.id}>
+            <h2>{node.frontmatter.title}</h2>
+            <p>Posted: {node.frontmatter.date}</p>
+          </article>
+        ))
+      }
     </Layout>
   )
 }

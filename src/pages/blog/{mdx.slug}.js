@@ -1,5 +1,7 @@
 import * as React from 'react'
 import Layout from '../../components/layout'
+import { graphql } from 'gatsby'
+
 const BlogPost = () => {
   return (
     <Layout pageTitle="Super Cool Blog Posts">
